@@ -10,6 +10,7 @@ const SeasonDisplay = props => {
         vMaxY={10}
         vMaxX={10}
       />
+      <div className="seasons-winter"></div>
     </div>
   );
 };
