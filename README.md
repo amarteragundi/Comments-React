@@ -1,3 +1,8 @@
+#Seasons
+
+Get users' physical location and current month to display the current season the user is experiencing.
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
