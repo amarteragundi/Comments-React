@@ -3,18 +3,25 @@ import ReactDOM from "react-dom";
 import SeasonDisplay from "./SeasonDisplay";
 
 class App extends React.Component {
-	constructor(props){
-		super(props);
-		this.state = {};
-	}
-  render() {
-    window.navigator.geolocation.getCurrentPosition(
-      position => console.log(position),
-      err => console.log(err)
-    );
+    constructor(props) {
+        super(props);
+        this.state = { lat: null };
 
-    return <div>Latitude</div>;
-  }
+        window.navigator.geolocation.getCurrentPosition(
+            position => {
+                this.setState({ lat: position.coords.latitude });
+            },
+            err => console.log(err)
+        );
+    }
+    render() {
+        return (
+            <div>
+                Latitude:{" "}
+                {this.state.lat == null ? "yet to fetch" : this.state.lat}
+            </div>
+        );
+    }
 }
 
 ReactDOM.render(<App />, document.querySelector("#root"));
