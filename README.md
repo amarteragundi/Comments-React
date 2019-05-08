@@ -1,4 +1,4 @@
-##Seasons
+## Seasons
 
 Get users' physical location and current month to display the current season the user is experiencing.
 
