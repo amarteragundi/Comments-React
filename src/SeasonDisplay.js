@@ -11,23 +11,22 @@ const getSeason = (lat, month) => {
 
 const SeasonDisplay = props => {
   const season = getSeason(props.lat, new Date().getMonth());
-  if(season == "winter"){
-    return (
-      <div>
-        <SnowStorm
+
+  return (
+    <div>
+      {(season == "winter") ?
+        (<SnowStorm
           flakesMaxActive={400}
           animationInterval={50}
           vMaxY={10}
           vMaxX={10}
-        />
-        <div className="seasons-winter" />
-      </div>
-    );
-  } else {
-    return (
-      <div className="seasons-summer" />
-    )
-  }
+        />) : ""
+      }
+      <div
+        className={season == "winter" ? "seasons-winter" : "seasons-summer"}
+      />
+    </div>
+  );
 };
 
 export default SeasonDisplay;
