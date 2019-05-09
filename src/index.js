@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import SeasonDisplay from "./SeasonDisplay";
+import Loader from "./loader";
 
 class App extends React.Component {
   state = { lat: null, errMessage: "", showLoader: false };
@@ -35,24 +36,7 @@ class App extends React.Component {
 
     if (this.state.showLoader) {
       return (
-        <div className="ui segment loading">
-          <div className="ui active dimmer">
-            <div
-              className="ui text loader"
-              style={{
-                fontSize: "30px",
-                display: "block",
-                position: "absolute",
-                bottom: "60px",
-                left: "20%",
-                cursor: "pointer",
-                textAlign: "center"
-              }}
-            >
-              Loading..
-            </div>
-          </div>
-        </div>
+        <Loader />
       );
     }
 
