@@ -29,7 +29,7 @@ class App extends React.Component {
     );
   }
 
-  render() {
+  renderContent(){
     if (this.state.errMessage && !this.state.lat)
       return <LocationDenied />
 
@@ -56,6 +56,10 @@ class App extends React.Component {
         />
       </div>
     );
+  }
+
+  render() {
+    return <div>{this.renderContent()}</div>
   }
 }
 
