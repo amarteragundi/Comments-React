@@ -29,7 +29,7 @@ class App extends React.Component {
 
   render() {
     if (this.state.errMessage && !this.state.lat)
-      return <div>error: {this.state.errMessage}</div>;
+      return <div className="location_denies_bg"></div>;
 
     if (this.state.lat) return <SeasonDisplay lat={this.state.lat} />;
 
