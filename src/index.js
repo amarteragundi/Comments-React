@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import SeasonDisplay from "./SeasonDisplay";
 import Loader from "./loader";
+import LocationDenied from "./locationDenied";
 
 class App extends React.Component {
   state = { lat: null, errMessage: "", showLoader: false };
@@ -30,7 +31,7 @@ class App extends React.Component {
 
   render() {
     if (this.state.errMessage && !this.state.lat)
-      return <div className="location_denies_bg"></div>;
+      return <LocationDenied />
 
     if (this.state.lat) return <SeasonDisplay lat={this.state.lat} />;
 
