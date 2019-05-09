@@ -23,7 +23,7 @@ const SeasonDisplay = props => {
         />) : ""
       }
       <div
-        className={season == "winter" ? "seasons-winter" : "seasons-summer"}
+        className={`seasons-${season == "winter" ? season : season}`}
       />
     </div>
   );
